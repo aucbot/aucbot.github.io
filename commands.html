@@ -1,221 +1,297 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-       img { 
-         float: left; /* Use float property to place the image on the left side of the h1 heading */ 
-         margin-left: 2%; /* Add this property to create space between the image and the heading */ 
-       }
-.active, .collapsible:hover {
-  background-color: #555;
+<!DOCTYPE html> 
+ <html> 
+     
+ <head> 
+ <meta name="viewport" content="width=device-width, initial-scale=1"> 
+ <style> 
+     html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: table;
 }
 
-.content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+footer {
+    background-color: black;
+    display: table-row;
+    height: 0;
+    text-align: center;
+   
 }
-.content.show {
-  max-height: 500px; /* adjust as needed */
-}
-h1 {
-  font-family: Arial, sans-serif;
-  font-size: 3em;
-  text-align: center;
-  background-color: #F4F4F4;
-  color: #333;
-  padding: 0.5em;
-  border: 2px solid #333;
-  border-radius: 10px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-}
-.behold {
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 1.5em;
-  text-align: center;
-  color: #555;
-  margin: 1em auto;
-  max-width: 800px;
-}
-      .sidenav { 
-   height: 100%; /* 100% Full-height */ 
-   width: 0; /* 0 width - change this with JavaScript */ 
-   position: fixed; /* Stay in place */ 
-   z-index: 1; /* Stay on top */ 
-   top: 0; /* Stay at the top */ 
-   left: 0; 
-   background-color: #111; /* Black*/ 
-   overflow-x: hidden; /* Disable horizontal scroll */ 
-   padding-top: 60px; /* Place content 60px from the top */ 
-   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */ 
+ .collapsible { 
+   background-color: #777; 
+   color: white; 
+   cursor: pointer; 
+   padding: 18px; 
+   width: 100%; 
+   border: none; 
+   text-align: left; 
+   outline: none; 
+   font-size: 15px; 
+ } 
+        img {  
+          float: left; /* Use float property to place the image on the left side of the h1 heading */  
+          margin-left: 2%; /* Add this property to create space between the image and the heading */  
+          top: 0px;
+        } 
+ .active, .collapsible:hover { 
+   background-color: #555; 
  } 
   
- /* The navigation menu links */ 
- .sidenav a { 
-   padding: 8px 8px 8px 32px; 
-   text-decoration: none; 
-   font-size: 25px; 
-   color: #818181; 
-   display: block; 
-   transition: 0.3s; 
+ .content { 
+   max-height: 0; 
+   overflow: hidden; 
+   transition: max-height 0.2s ease-out; 
  } 
-  
- /* When you mouse over the navigation links, change their color */ 
- .sidenav a:hover { 
-   color: #f1f1f1; 
+ .content.show { 
+   max-height: 500px; /* adjust as needed */ 
  } 
-  
- /* Position and style the close button (top right corner) */ 
- .sidenav .closebtn { 
-   position: absolute; 
-   top: 0; 
-   right: 25px; 
-   font-size: 36px; 
-   margin-left: 50px; 
+ h1 { 
+   font-family: Arial, sans-serif; 
+   font-size: 3em; 
+   text-align: center; 
+   background-color: #F4F4F4; 
+   color: #333; 
+   padding: 0.5em; 
+   border: 2px solid #333; 
+   border-radius: 10px; 
+   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); 
+   text-transform: uppercase; 
  } 
-  
- /* Style page content - use this if you want to push the page content to the right when you open the side navigation */ 
- #main { 
-   transition: margin-left .5s; 
-   padding: 20px; 
+ .behold { 
+   font-family: "Helvetica Neue", sans-serif; 
+   font-size: 1.5em; 
+   text-align: center; 
+   color: #555; 
+   margin: 1em auto; 
+   max-width: 800px; 
  } 
+       .sidenav {  
+    height: 100%; /* 100% Full-height */  
+    width: 0; /* 0 width - change this with JavaScript */  
+    position: fixed; /* Stay in place */  
+    z-index: 1; /* Stay on top */  
+    top: 0; /* Stay at the top */  
+    left: 0;  
+    background-color: #111; /* Black*/  
+    overflow-x: hidden; /* Disable horizontal scroll */  
+    padding-top: 60px; /* Place content 60px from the top */  
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */  
+  }  
+    
+  /* The navigation menu links */  
+  .sidenav a {  
+    padding: 8px 8px 8px 32px;  
+    text-decoration: none;  
+    font-size: 25px;  
+    color: #818181;  
+    display: block;  
+    transition: 0.3s;  
+  } 
+ 
+ 
+    
+  /* When you mouse over the navigation links, change their color */  
+  .sidenav a:hover {  
+    color: #f1f1f1;  
+  }  
+    
+  /* Position and style the close button (top right corner) */  
+  .sidenav .closebtn {  
+    position: absolute;  
+    top: 0;  
+    right: 25px;  
+    font-size: 36px;  
+    margin-left: 50px;  
+  }  
+    
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */  
+  #main {  
+    transition: margin-left .5s;  
+    padding: 20px;  
+  }  
+    
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */  
+  @media screen and (max-height: 450px) {  
+    .sidenav {padding-top: 15px;}  
+    .sidenav a {font-size: 18px;}  
+  } 
+
+
+     </style>  
+     <script >  
+         function openNav() {  
+    document.getElementById("mySidenav").style.width = "250px";  
+  }  
+    
+  /* Set the width of the side navigation to 0 */  
+  function closeNav() {  
+    document.getElementById("mySidenav").style.width = "0";  
+    
+  }
+ 
+  </script>  
+   <script src="discord-logo.js"></script>
+    <div id="mySidenav" class="sidenav">  
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+          
+    <a href="index.html">HOME</a>  
+    
+  </div>  
+    
+  <!-- Use any element to open the sidenav -->  
+  <span onclick="openNav()">&#9776;MENU</span> 
   
- /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */ 
- @media screen and (max-height: 450px) { 
-   .sidenav {padding-top: 15px;} 
-   .sidenav a {font-size: 18px;} 
- } 
-    </style> 
-    <script > 
-        function openNav() { 
-   document.getElementById("mySidenav").style.width = "250px"; 
- } 
+ <h1>Every Command Of Aucbot </h1> 
+ </head> 
+ <body>  
+    <img src="aucbot-logo.png"> <p class="behold">Behold, a simple walkthrough detailing each command of the Aucbot awaits you.</p> 
   
- /* Set the width of the side navigation to 0 */ 
- function closeNav() { 
-   document.getElementById("mySidenav").style.width = "0"; 
- }</script>
-</style>
-   <div id="mySidenav" class="sidenav"> 
-   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
-   <a href="index.html">HOME</a> 
-  
+ <button class="collapsible">setpurse</button> 
+ <div class="content"> 
+   <p>This is the command by which you can set the purse of a user.</p> 
+ <p>Required Arguments: Purse can be in million or billions. For your ease, I have added 'm' and 'b' features. For example, if you want to set the purse of user @Khawer#6683 to 3 million, you can type [prefix] setpurse @Khawer#6683 3m. This will set their purse to 3 million. If you use the command prefix setpurse @Khawer#6683 3 millions, it will break.</p> 
+ <p>Aliases: sp</p> 
+ <p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to be able to run this command.</p> 
  </div> 
   
- <!-- Use any element to open the sidenav --> 
- <span onclick="openNav()">open</span>
+ <button class="collapsible">setlogchannel</button> 
+ <div class="content"> 
+   <p>This is the command by which you can set the logging channel where the bot will type all the logs of your auction.</p> 
+ <p>Required Arguments: You need to provide a logging channel or its ID.</p> 
+ <p>Aliases: slc</p> 
+ <p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to be able to run this command.</p> 
+ </div> 
+ <button class="collapsible">bal</button> 
+ <div class="content"> 
+     <p>This command allows you to check your or anyone's purse.</p> 
+ <p>Required Arguments: [member] (this is an optional argument). If you want to check someone else's purse, you can mention their name or username. If not, the command will display your purse.</p> 
+ <p>Aliases: b, wallet</p> 
+ <p>Required Permission/Role: None</p> 
+ </div> 
+ <button class="collapsible">sell</button> 
+ <div class="content"> 
+     <p>This is the command to start an auction on a player.</p> 
+ <p>Required Arguments: &lt;player you want to sell&gt; &lt;base price&gt; [increment]. For example, $sell Kohli 4m 3m. Note that this command has a simple problem where it may break if you sell a player who has two names, such as Babar Azam. To avoid this problem, it's advised to use the slash command /sell instead.</p> 
+ <p>Aliases: None</p> 
+ <p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to be able to run this command.</p> 
+     </div> 
+     <button class="collapsible">bid</button> 
+ <div class="content"> 
+     <p>This command allows players to bid in the auction.</p> 
+ <p>Required Arguments: None</p> 
+ <p>Aliases: None</p> 
+ <p>Required Permission/Role: None</p> 
+ <p>This command is simple and easy to use. Players can use it to place their bids in the auction.</p> 
+     </div> 
+     <button class="collapsible">setdifference</button> 
+ <div class="content"> 
+     <p>This command allows you to set the difference/increment for the auction. Note that a player should be up for bidding already before using this command.</p> 
+ <p>Required Arguments: The difference can be added with 'm' and 'b'. For example, you can use the command 'setdifference 4m' to set the difference to 4 million.</p> 
+ <p>Aliases: sd</p> 
+ <p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to be able to run this command.</p> 
+     </div> 
+     <button class="collapsible">leaderboard</button> 
+ <div class="content"> 
+     <p>This command displays the leaderboard of your server. If you want to remove someone's name from the leaderboard, simply set their purse to 0.</p> 
+ <p>Required Arguments: None</p> 
+ <p>Aliases: lb</p> 
+ <p>Required Permission/Role: None</p> 
+ <p>This command is easy to use and does not require any special permissions or roles.</p> 
+     </div> 
+     <button class="collapsible">sold</button> 
+ <div class="content"> 
+     <p>This command allows you to end the bids on a player once a bid is concluded.</p> 
+ <p>Required Arguments: None</p> 
+ <p>Aliases: None</p> 
+ <p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to be able to run this command.</p> 
+ <p>This command is straightforward and can be used to end the bidding process on a player.</p> 
+     </div> 
+     <button class="collapsible">squad</button> 
+ <div class="content"> 
+     <p>This command allows you to view the list of players that you have bought or the players that another user has bought.</p> 
+ <p>Optional Argument: [user]</p> 
+ <p>Aliases: None</p> 
+ <p>Required Permission/Role: None</p> 
+ <p>This command is easy to use and does not require any special permissions or roles.</p> 
+     </div> 
+     <button class="collapsible">delete</button> 
+ <div class="content"> 
+     <p>This command allows you to delete a player from someone's squad or even delete all players.</p> 
+ <p>Required Arguments: The 'index' can be set to 'all', 'everyone', or 'max' to delete all players. If you want to delete a specific player, you can check that player's index by using the 'squad' command and set the 'index' to that specific index. You can also use 'index2' to clear players between two specific indexes.</p> 
+ <p>Aliases: None</p> 
+ <p>Required Permission/Role: Administrator</p> 
+ <p>This command requires administrator permissions to run and can be used to delete players from a user's squad or delete all players.</p> 
+     </div> 
+     <button class="collapsible">/set_automatic_sold_time</button> 
+ <div class="content">
+<p>This is a premium command that requires users to invite 5 other users to the support server of Aucbot.</p>
+<p>Command: /set_automatic_sold_time [time]</p>
+<p>Required Argument: [time] - The amount of time in seconds to set as the time limit for automatic sold. The maximum value that can be set is 30 seconds.</p>
+<p>Example: /set_automatic_sold_time 15 - This will set the time limit to 15 seconds.</p>
+<p>To gain access to this premium command, users are required to invite 5 other users to the support server of Aucbot. Once the invites are confirmed, they will be able to use this command to configure the time limit for automatic player selling.</p>
+ </div>
+ <button class="collapsible">swap</button>
+<div class="content">
+    <p>The swap command allows you to change the position of players within your squad.</p>
+<p>Command: .swap &lt;index1&gt; &lt;index2&gt;</p>
+<p>Required Permission: None</p>
+<p>Required Arguments: You need to specify the indices of the players you want to swap. Use &lt;index1&gt; to indicate the index of the first player and &lt;index2&gt; to indicate the index of the second player.</p>
+<p>Example: .swap 2 5 - This will swap the players at index 2 and index 5 within your squad.</p>
+<p>This command is easy to use and doesn't require any special permissions. It allows you to rearrange the positions of players in your squad as needed.</p>
+    </div>
+    <button class="collapsible">swappurse</button>
+<div class="content">
+    <p>The 'swappurse' command allows you to swap the purse values between two members. For example, if your purse is 6 and another member's purse is 9, this command will switch the purse values between the two members.</p>
+<p>Command: swappurse @member1 @member2</p>
+<p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to use this command.</p>
+<p>Example: swappurse @khawer @zuhair - This will swap the purses of the members @khawer and @zuhair.</p>
+<p>By using this command, you can exchange the purse values between members, facilitating transfers or adjustments within the auction system. Please note that only users with the necessary permissions or role can execute this command.</p>
+    </div>
+    <button class="collapsible">swapsquads</button>
+<div class="content">
+    <p>The 'swapsquads' command allows you to swap the squads between two members. This command will exchange the squads of the specified members.</p>
+<p>Command: swapsquads @member1 @member2</p>
+<p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to use this command.</p>
+<p>Example: swapsquads @khawer @zuhair - This will swap the squads between the members @khawer and @zuhair.</p>
+<p>Using this command, you can exchange the squads between members, facilitating team transfers or adjustments within the auction system. Please note that only users with the necessary permissions or role can execute this command.</p>
+    </div>
+    <button class="collapsible">prefix</button>
+<div class="content">
+  <p>  The 'prefix' command allows you to change the default prefix used to interact with the bot. By default, the prefix is set as '$', but you can modify it using this command.</p>
 
-<h1>Every Command Of Aucbot </h1>
-</head>
-<body>
-       <img src="aucbot-logo.png">
-    <p class="behold">Behold, a simple walkthrough detailing each command of the Aucbot awaits you.</p>
+<p>Command: prefix [new_prefix]</p>
 
-<button class="collapsible">setpurse</button>
-<div class="content">
-  <p>This is the command by which you can set the purse of a user.</p>
-<p>Required Arguments: Purse can be in million or billions. For your ease, I have added 'm' and 'b' features. For example, if you want to set the purse of user @Khawer#6683 to 3 million, you can type [prefix] setpurse @Khawer#6683 3m. This will set their purse to 3 million. If you use the command prefix setpurse @Khawer#6683 3 millions, it will break.</p>
-<p>Aliases: sp</p>
-<p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to be able to run this command.</p>
-</div>
+<p>Required Permission/Role: You need administrator permission to change the prefix.</p>
 
-<button class="collapsible">setlogchannel</button>
-<div class="content">
-  <p>This is the command by which you can set the logging channel where the bot will type all the logs of your auction.</p>
-<p>Required Arguments: You need to provide a logging channel or its ID.</p>
-<p>Aliases: slc</p>
-<p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to be able to run this command.</p>
-</div>
-<button class="collapsible">bal</button>
-<div class="content">
-    <p>This command allows you to check your or anyone's purse.</p>
-<p>Required Arguments: [member] (this is an optional argument). If you want to check someone else's purse, you can mention their name or username. If not, the command will display your purse.</p>
-<p>Aliases: b, wallet</p>
-<p>Required Permission/Role: None</p>
-</div>
-<button class="collapsible">sell</button>
-<div class="content">
-    <p>This is the command to start an auction on a player.</p>
-<p>Required Arguments: &lt;player you want to sell&gt; &lt;base price&gt; [increment]. For example, $sell Kohli 4m 3m. Note that this command has a simple problem where it may break if you sell a player who has two names, such as Babar Azam. To avoid this problem, it's advised to use the slash command /sell instead.</p>
-<p>Aliases: None</p>
-<p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to be able to run this command.</p>
-    </div>
-    <button class="collapsible">bid</button>
-<div class="content">
-    <p>This command allows players to bid in the auction.</p>
-<p>Required Arguments: None</p>
-<p>Aliases: None</p>
-<p>Required Permission/Role: None</p>
-<p>This command is simple and easy to use. Players can use it to place their bids in the auction.</p>
-    </div>
-    <button class="collapsible">setdifference</button>
-<div class="content">
-    <p>This command allows you to set the difference/increment for the auction. Note that a player should be up for bidding already before using this command.</p>
-<p>Required Arguments: The difference can be added with 'm' and 'b'. For example, you can use the command 'setdifference 4m' to set the difference to 4 million.</p>
-<p>Aliases: sd</p>
-<p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to be able to run this command.</p>
-    </div>
-    <button class="collapsible">leaderboard</button>
-<div class="content">
-    <p>This command displays the leaderboard of your server. If you want to remove someone's name from the leaderboard, simply set their purse to 0.</p>
-<p>Required Arguments: None</p>
-<p>Aliases: lb</p>
-<p>Required Permission/Role: None</p>
-<p>This command is easy to use and does not require any special permissions or roles.</p>
-    </div>
-    <button class="collapsible">sold</button>
-<div class="content">
-    <p>This command allows you to end the bids on a player once a bid is concluded.</p>
-<p>Required Arguments: None</p>
-<p>Aliases: None</p>
-<p>Required Permission/Role: You need administrator permission or the Auctioneer (case sensitive) role to be able to run this command.</p>
-<p>This command is straightforward and can be used to end the bidding process on a player.</p>
-    </div>
-    <button class="collapsible">squad</button>
-<div class="content">
-    <p>This command allows you to view the list of players that you have bought or the players that another user has bought.</p>
-<p>Optional Argument: [user]</p>
-<p>Aliases: None</p>
-<p>Required Permission/Role: None</p>
-<p>This command is easy to use and does not require any special permissions or roles.</p>
-    </div>
-    <button class="collapsible">delete</button>
-<div class="content">
-    <p>This command allows you to delete a player from someone's squad or even delete all players.</p>
-<p>Required Arguments: The 'index' can be set to 'all', 'everyone', or 'max' to delete all players. If you want to delete a specific player, you can check that player's index by using the 'squad' command and set the 'index' to that specific index. You can also use 'index2' to clear players between two specific indexes.</p>
-<p>Aliases: None</p>
-<p>Required Permission/Role: Administrator</p>
-<p>This command requires administrator permissions to run and can be used to delete players from a user's squad or delete all players.</p>
-    </div>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
+<p>Example: $prefix . - This will change the prefix to '.'</p>
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.classList.contains("show")) {
-      content.classList.remove("show");
-    } else {
-      content.classList.add("show");
-    }
-  });
-}
-</script>
+<p>After changing the prefix, you can use the new prefix followed by the command name or by mentioning the bot to execute commands. For example, if the new prefix is '.', you can use commands like '.help' or mention the bot and say 'help' to trigger the help command.</p>
 
-</body>
-</html>
+<p>Remember to have administrator permission to change the prefix and ensure to choose a prefix that does not conflict with other existing commands or bots in your server.</p>
+    </div>
+ <footer>
+     
+      <a href="https://discord.gg/muXnqYCTHF"><i class='fab fa-discord' style='font-size: 45px;color:White'></i></a>
+ </footer>
+ 
+ <script> 
+ var coll = document.getElementsByClassName("collapsible"); 
+ var i; 
+  
+ for (i = 0; i < coll.length; i++) { 
+   coll[i].addEventListener("click", function() { 
+     this.classList.toggle("active"); 
+     var content = this.nextElementSibling; 
+     if (content.classList.contains("show")) { 
+       content.classList.remove("show"); 
+     } else { 
+       content.classList.add("show"); 
+     } 
+   }); 
+ } 
+ </script> 
+  
+ </body> 
+ </html>
