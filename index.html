@@ -1,121 +1,181 @@
-<!DOCTYPE html> 
- <html> 
-   <head> 
-     <meta charset="UTF-8"> 
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Aucbot</title> 
-   </head> 
-   <body> 
-       <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="commands.html">Commands</a>
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+      <script src="https://kit.fontawesome.com/840b1fb9b0.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aucbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      body {
+        background-color: #a87332;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+    html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: table;
+}
+
+footer {
+    background-color: black;
+    display: table-row;
+    height: 0;
+    text-align: center;
+   
+}
+      .header {
+        background-color: black;
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+
+      .header img {
+        float: left;
+        margin-right: 10px;
+      }
+
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      #main {
+        transition: margin-left .5s;
+        padding: 20px;
+      }
+
+      .content {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 5px;
+      }
+
+      .footer {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .footer a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      .openbtn {
+        font-size: 30px;
+        cursor: pointer;
+        background-color: #333;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+    </style>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <img src="aucbot-logo.png" alt="Aucbot Logo">
+      <h1>Aucbot - Discord's Auction Bot</h1>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+<a href="commands.html">COMMANDS</a>
 
 </div>
+<div id="main">
+  <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
 
-<!-- Use any element to open the sidenav -->
-<span onclick="openNav()">open</span>
+  <div class="content">
+    <h2>Welcome to Aucbot!</h2>
+  <p id="howtouse">How to use it?</p>  
+      
+      <p>To set the logging channel, use the `[p]slc [channel]` command. Replace `[channel]` with either the direct mention or the ID of the channel. 
+  
+ Now you ready to get going with sell command. `/Sell` command takes player(that want to sell), baseprice and increment as perimeters.  
+  
+ To clarify, both the "baseprice" and "increment" parameters can take the following format: 
+  
+ - m for millions (e.g. 4m for 4 million) 
+ - b for billions 
+ - t for trillions 
+ - k for thousands 
+  
+ However, it cannot be written as "4 millions”. 
+  
+ You are now ready to place bids. You can bid using the `[p]bid` command, but you cannot bid manually, for example, by typing [p]bid 4m. All bids must be incremented. 
+  
+ To close out the bidding process, run the `[p]sold` command. This will add the player to the last bidder's squad and deduct the amount of the last bid.</p> 
+  </div>
+</div>
 
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-       <img src="aucbot-logo.png">
-     <h1>Aucbot-Discord's auction bot</h1> 
-     <p id="howtouse">How to use it?</p> 
-     <p>To set the logging channel, use the `[p]slc [channel]` command. Replace `[channel]` with either the direct mention or the ID of the channel.
-
-Now you ready to get going with sell command. `/Sell` command takes player(that want to sell), baseprice and increment as perimeters. 
-
-To clarify, both the "baseprice" and "increment" parameters can take the following format:
-
-- m for millions (e.g. 4m for 4 million)
-- b for billions
-- t for trillions
-- k for thousands
-
-However, it cannot be written as "4 millions”.
-
-You are now ready to place bids. You can bid using the `[p]bid` command, but you cannot bid manually, for example, by typing [p]bid 4m. All bids must be incremented.
-
-To close out the bidding process, run the `[p]sold` command. This will add the player to the last bidder's squad and deduct the amount of the last bid.</p>
-   </body>
-   <style>
-       h1 {
-           background-color: black;
-           text-align: center;
-           padding-top: 0px;
-           poposition: fixed;
-           top: 0;
-           right: 0px;
-           color: white;
-       }
-       img {
-        float: left; /* Use float property to place the image on the left side of the h1 heading */
-        margin-left: 2%; /* Add this property to create space between the image and the heading */
-      }
-      #howtouse {
-          color: ;
-          text-align: center;
-          text-decoration-line: underline;
-          text-decoration-style: dotted;
-          font-size : 20px;
-      }
-      body {
-          background-color : #a87332;
-      }
-      .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-   </style>
-   <script >
-       function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}</script>
- </html>
+ <footer>
+     
+      <a href="https://discord.gg/muXnqYCTHF"><i class='fab fa-discord' style='font-size: 45px;color:White'></i></a>
+ </footer>
+</div>
+</body>
+</html>
